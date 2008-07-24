@@ -1,0 +1,57 @@
+# Geyser sample configuration file
+# --------------------------------
+
+# All parameter settings are optional. For parameters not specified, default
+# values are assigned as specified in the commented settings here.
+
+# Maximum number of queued bytes per second (excludes protocol overhead, so
+# the actual bandwith used will be a bit higher than this)
+#   upload_rate = 262144  # 256 KiB/s
+
+# Data directory; all file and directory entries (except those starting
+# with a dot) will be shared.
+#   data_dir = data
+
+# Metadata directory; contains .torrent files corresponding to entries
+# in the data directory. Note that the server will update entries in this
+# directory and will remove .torrent files without a corresponding data entry!
+#   metadata_dir = metadata
+
+# Announce URL. If empty, it is generated from the tracker's hostname and port.
+#   announce_url =
+
+# Port to which the tracker will be bound. Note that if the tracker port is
+# ever changed, all metadata files must be manually removed so they will be
+# regenerated!
+#   tracker_port = 7000
+
+# Specifies the minimum age (in seconds) required for all entries in a data
+# file or directory before its metadata is (re)generated. This prevents
+# metadata files being generated while a data directory is still being copied
+# (or otherwise being modified).
+#   directory_cooldown = 60
+
+# Minimum number of seconds to wait between initiating two updates of the
+# metadata directory. If the update process itself takes long, there will
+# be a shorter or no pause between updates.
+#   directory_update_interval = 300
+
+# Metadata file suffix (e.g. ".torrent"). Do NOT set to the empty string
+# if the data and metadata directory are the same!
+#   metadata_suffix = .torrent
+
+# Port range on which the seeder is bound.
+#   seeder_port_min = 6881
+#   seeder_port_max = 6999
+
+# Interval at which peers should contact the tracker, in seconds.
+#   tracker_rerequest_interval = 90
+
+# Duration in seconds after which peers are purged from the list. Should be
+# larger than tracker_rerequest_interval for proper operation.
+#   tracker_purge_interval = 120
+
+# Maximum number of peers to track per torrent. When this limit is reached,
+# peers will be purged on a first-in-first-out basis to make room for new
+# peers.
+#   tracker_max_peers_per_torrent = 1000

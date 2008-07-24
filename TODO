@@ -1,0 +1,36 @@
+BUGS
+ - Investigate double-free when a read-error occurs in the TorrentPeer:
+    TorrentPeer(660): constructed
+    TorrentPeer(660): readable
+    TorrentPeer(660): read error
+    TorrentPeer(660): destructed
+    WARNING RefCountingObject::release() called with this == 0!
+
+WIN32 BUGS:
+ - Relative paths don't work at all
+ - gethostname() returns a 'local' hostname (e.g. "HEMEL") but I want a FQDN.
+ - realpath() has no real implementation yet
+
+REQUIREMENTS
+ - Write man-page
+
+ENHANCHEMENTS
+ - Count number of succesful downloads, and store this on disk
+ - Generate XML listing (for data and metadata)
+ - Generate HTML listing (for data and metadata)
+ - Serve data/metadata files over HTTP
+ - Global traffic shaping/IP limiting
+ - Seed: better choking policy
+ - Delayed loading of metadata (upon request)
+
+TESTING
+Needs testing:
+ - with single data/metadata dir
+ - with many torrents
+ - with many peers
+ - with torrents with many files
+ etc.
+
+TESTS PASSED
+ - share 5 GiB file
+
